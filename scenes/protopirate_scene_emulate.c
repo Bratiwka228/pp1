@@ -165,6 +165,21 @@ static uint8_t
             return original;
         }
     }
+    // Mazda V0
+    else if(strstr(protocol, "Mazda")) {
+        switch(key) {
+        case InputKeyUp:
+            return 0x01; // Lock
+        case InputKeyOk:
+            return 0x02; // Unlock
+        case InputKeyDown:
+            return 0x04; // Trunk
+        case InputKeyRight:
+            return 0x08; // Remote
+        default:
+            return original;
+        }
+    }
     // Ford - (needs testing)
     else if(strstr(protocol, "Ford")) {
         switch(key) {
