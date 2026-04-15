@@ -547,8 +547,6 @@ void kia_protocol_decoder_v7_feed(void* context, bool level, uint32_t duration) 
         break;
 
     case KiaV7DecoderStepData: {
-         * long uses 4 / 6; after each edge, if bit count is 64, validate header (~MSB byte == 0x4C)
-         * whether this edge was valid Manchester timing or a gap — not only on bad timing. */
         if(kia_v7_is_short(duration)) {
             event = (ManchesterEvent)((uint8_t)(level & 1U) << 1U);
         } else if(kia_v7_is_long(duration)) {
