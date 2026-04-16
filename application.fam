@@ -1,6 +1,6 @@
 App(
-    appid="proto_pirate",
-    name="ProtoPirate",
+    appid="proto_pirate_2.8fix",
+    name="ProtoPirate_2.8",
     apptype=FlipperAppType.EXTERNAL,
     targets=["f7"],
     entry_point="protopirate_app",
